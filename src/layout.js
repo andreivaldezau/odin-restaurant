@@ -1,4 +1,14 @@
 export default function () {
+  const mainContainer = document.querySelector("#container");
+
+  const fillContainer = (content) => {
+    mainContainer.appendChild(content);
+  };
+
+  const resetContainer = () => {
+    mainContainer.replaceChildren();
+  };
+
   const createTitleNode = (h1) => {
     const container = document.createElement("div");
     const header = document.createElement("h1");
@@ -32,5 +42,11 @@ export default function () {
     return container;
   };
 
-  return { createTitleNode, createSubtitleNode, createParagraphNode };
+  return {
+    fillContainer,
+    resetContainer,
+    createTitleNode,
+    createSubtitleNode,
+    createParagraphNode,
+  };
 }

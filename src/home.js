@@ -1,6 +1,7 @@
 import LayoutHandler from "./layout.js";
 
 export default function () {
+  const layout = LayoutHandler();
   const title = "Pancake's Cat Café";
   const hours =
     "Sunday: 8am - 8pm\n\
@@ -14,7 +15,6 @@ export default function () {
 
   const getContent = () => {
     const content = document.createElement("div");
-    const layout = LayoutHandler();
     const headerNode = layout.createTitleNode(title);
     const hoursNode = layout.createParagraphNode("Hours", hours);
     const addressNode = layout.createParagraphNode("Address", address);
@@ -24,5 +24,13 @@ export default function () {
     return content;
   };
 
-  return { getContent };
+  const onButtonClick = () => {
+    const button = document.querySelector("#home");
+    button.addEventListener("click", () => {
+      layout.resetContainer();
+      layout.fillContainer(getContent());
+    });
+  };
+
+  return { getContent, onButtonClick };
 }

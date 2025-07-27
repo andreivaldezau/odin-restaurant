@@ -1,16 +1,20 @@
 import "./styles.css";
+import Layout from "./layout.js";
 import HomePage from "./home.js";
 
 const main = () => {
-  const container = document.querySelector("#container");
+  const layout = Layout();
+  const home = HomePage();
 
-  const displayHome = () => {
-    const home = HomePage();
+  layout.resetContainer();
+  home.onButtonClick();
+
+  const displayInit = () => {
     const content = home.getContent();
-    container.appendChild(content);
+    layout.fillContainer(content);
   };
 
-  return { displayHome };
+  return { displayInit };
 };
 
-main().displayHome();
+main().displayInit();

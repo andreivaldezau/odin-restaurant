@@ -9,6 +9,7 @@ export default function () {
 
   const getContent = () => {
     const content = document.createElement("div");
+    const hr = document.createElement("hr");
     const headerNode = layout.createTitleNode(title);
     const subtitleNode1 = layout.createSubtitleNode(subtitle1);
     const subtitleNode2 = layout.createSubtitleNode(subtitle2);
@@ -61,6 +62,7 @@ export default function () {
     );
 
     content.appendChild(headerNode);
+    content.appendChild(hr);
     content.appendChild(subtitleNode1);
     content.appendChild(entree1);
     content.appendChild(entree2);
@@ -73,6 +75,7 @@ export default function () {
     content.appendChild(drink1);
     content.appendChild(drink2);
     content.appendChild(drink3);
+    content.classList.add("content");
     return content;
   };
 

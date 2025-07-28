@@ -15,12 +15,15 @@ export default function () {
 
   const getContent = () => {
     const content = document.createElement("div");
+    const hr = document.createElement("hr");
     const headerNode = layout.createTitleNode(title);
     const hoursNode = layout.createParagraphNode("Hours", hours);
     const addressNode = layout.createParagraphNode("Address", address);
     content.appendChild(headerNode);
+    content.appendChild(hr);
     content.appendChild(hoursNode);
     content.appendChild(addressNode);
+    content.classList.add("content");
     return content;
   };
 

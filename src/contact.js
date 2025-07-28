@@ -6,6 +6,7 @@ export default function () {
 
   const getContent = () => {
     const content = document.createElement("div");
+    const hr = document.createElement("hr");
     const headerNode = layout.createTitleNode(title);
     const contactNode = layout.createParagraphNode(
       "Pancake",
@@ -15,7 +16,9 @@ export default function () {
     );
 
     content.appendChild(headerNode);
+    content.appendChild(hr);
     content.appendChild(contactNode);
+    content.classList.add("content");
     return content;
   };
 
